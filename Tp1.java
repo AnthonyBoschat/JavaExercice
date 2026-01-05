@@ -107,7 +107,7 @@ public class Tp1 {
 			
 		}
 
-		if(parsed_age > 100){
+		if(parsed_age >= 100){
 			System.out.printf("%n ➡️  Bonjour %s %s (%s ans, félicitation, vous êtes vieux 👴)%n", first_name, last_name, age);
 		}else{
 			System.out.printf("%n ➡️  Bonjour %s %s (%s ans)%n", first_name, last_name, age);
