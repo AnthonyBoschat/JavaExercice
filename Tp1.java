@@ -82,15 +82,15 @@ public class Tp1 {
 		String age;
 		
         System.out.print("Prénom : ");
-        first_name = scanner.nextLine();
+        first_name = scanner.nextLine().trim();
 
         System.out.print("Nom : ");
-        last_name = scanner.nextLine();
+        last_name = scanner.nextLine().trim();
 
 		
 		while (true) { 
 			System.out.print("Age : ");
-			age = scanner.nextLine();
+			age = scanner.nextLine().trim();
 			int parsed_age;
 			try {
 				parsed_age = Integer.parseInt(age);
@@ -119,10 +119,10 @@ public class Tp1 {
 		String temp_value;
 
         System.out.print("Saisir la valeur de x : ");
-        value_x = scanner.nextLine();
+        value_x = scanner.nextLine().trim();
 
         System.out.print("Saisir la valeur de y : ");
-        value_y = scanner.nextLine();
+        value_y = scanner.nextLine().trim();
 
         temp_value 	= value_x;
         value_x 	= value_y;
@@ -137,10 +137,10 @@ public class Tp1 {
 		String second_sentence;
 
 		System.out.print("Saisir un premier mot : ");
-		first_sentence = scanner.next();
+		first_sentence = scanner.nextLine().trim();
 
 		System.out.print("Saisir un second mot : ");
-		second_sentence = scanner.next();
+		second_sentence = scanner.nextLine().trim();
 
 		if(first_sentence.length() > second_sentence.length()){
 			System.out.printf("➡️  '%s' est le mot avec le plus de caractères", first_sentence);
@@ -159,7 +159,7 @@ public class Tp1 {
 
 		while(true){
 			System.out.print("Saisir une année : ");
-			user_year = scanner.nextLine();
+			user_year = scanner.nextLine().trim();
 			int parsed_user_year;
 			try {
 				parsed_user_year = Integer.parseInt(user_year);
@@ -231,7 +231,7 @@ public class Tp1 {
 
 		while(true){
 			System.out.println("Entrer un nombre : ");
-			user_guess = scanner.nextLine();
+			user_guess = scanner.nextLine().trim();
 			int parsed_user_guess;
 			int difference;
 
@@ -275,7 +275,7 @@ public class Tp1 {
 		do { 
 
 			System.out.println("Entrer un nombre : ");
-			user_guess = scanner.nextLine();
+			user_guess = scanner.nextLine().trim();
 			int parsed_user_guess;
 			int difference;
 
