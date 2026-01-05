@@ -18,16 +18,20 @@ public class Tp1 {
 
 	// Méthode de l'exercice n°1.1
 	public static void exercice1_1() {
-
-		// 1° - Déclaration
 		String prenom;
-		
-		// 2° - Initialisation
+		String nom;
+		String age;
+
 		System.out.print("Prénom : ");
 		prenom = scanner.next();
 
-		// 3° - Utilisation
-		System.out.println("Bonjour " + prenom);
+		System.out.print("Nom : ");
+		nom = scanner.next();
+
+		System.out.print("Age : ");
+		age = scanner.next();
+
+		System.out.printf("Bonjour %s %s (%s ans)%n", prenom, nom, age);
 	}
 
 	// Méthode de l'exercice n°1.2 
