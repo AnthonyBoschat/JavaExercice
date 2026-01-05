@@ -206,7 +206,45 @@ public class Tp1 {
     private static void exercice4_1() {
         presentationExercice("4_1");
 
-        System.out.printf("➡️ ");
+		while(true){
+			String user_guess;
+			double value_decimal = Math.random() * 101;
+			int rand 			 = (int) value_decimal;
+			int guess_number 	 = 0;
+
+			while(true){
+				System.out.println("Entrer un nombre : ");
+				user_guess = scanner.next();
+
+				try {
+					int difference;
+					int parsed_user_guess 	= Integer.parseInt(user_guess);
+					guess_number += 1;
+					difference = rand - parsed_user_guess;
+
+					if(parsed_user_guess > rand){
+						difference = parsed_user_guess - rand;
+					}
+					
+					if(difference == 0){
+						System.out.printf("➡️  Victoire ! - %s tentative(s)", guess_number);
+						break;
+					}
+					else if(difference > 20){
+						System.out.println("-----> froid");
+					}else if(difference >= 6 && difference <= 20 ){
+						System.out.println("-----> tiède");
+					}else if(difference >= 1 && difference <= 5){
+						System.out.println("-----> chaud");
+					}
+				} catch (Exception e) {
+					System.out.println("Veuillez saisir un nombre valide (nombre entier)");
+				}
+
+			}
+
+			break;
+		}
     }
 
 
