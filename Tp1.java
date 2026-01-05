@@ -146,14 +146,13 @@ public class Tp1 {
 		System.out.print("Saisir un second mot : ");
 		second_sentence = scanner.nextLine().trim();
 
-		if(first_sentence.length() == second_sentence.length()){
-			System.out.printf("➡️  '%s' et '%s' possèdent le même nombre de caractère -> %s caractère(s)", first_sentence, second_sentence, first_sentence.length());
+		
+		if(first_sentence.length() > second_sentence.length()){
+			System.out.printf("➡️  '%s' est le mot avec le plus de caractères", first_sentence);
+		}else if(second_sentence.length() > first_sentence.length()){
+			System.out.printf("➡️  '%s' est le mot avec le plus de caractères", second_sentence);
 		}else{
-			if(first_sentence.length() > second_sentence.length()){
-				System.out.printf("➡️  '%s' est le mot avec le plus de caractères", first_sentence);
-			}else{
-				System.out.printf("➡️  '%s' est le mot avec le plus de caractères", second_sentence);
-			}
+			System.out.printf("➡️  '%s' et '%s' possèdent le même nombre de caractère -> %s caractère(s)", first_sentence, second_sentence, first_sentence.length());
 		}
         
     }
