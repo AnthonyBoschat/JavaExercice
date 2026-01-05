@@ -6,7 +6,6 @@ public class Tp1 {
 
     public static void main(String[] args) {
         runMenu();
-        // scanner.close();
     }
 
     private static void runMenu() {
@@ -92,15 +91,15 @@ public class Tp1 {
 		while (true) { 
 			System.out.print("Age : ");
 			age = scanner.nextLine();
-			int parsedAge;
+			int parsed_age;
 			try {
-				parsedAge = Integer.parseInt(age);
+				parsed_age = Integer.parseInt(age);
 			} catch (NumberFormatException e) {
 				System.out.println("Veuillez saisir un nombre entier.");
 				continue;
 			}
 
-			if (parsedAge > 0) {
+			if (parsed_age > 0) {
 				break;
 			}
 
