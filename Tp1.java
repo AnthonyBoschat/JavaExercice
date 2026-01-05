@@ -80,6 +80,7 @@ public class Tp1 {
 		String first_name;
 		String last_name;
 		String age;
+		int parsed_age;
 		
         System.out.print("Prénom : ");
         first_name = scanner.nextLine().trim();
@@ -91,7 +92,6 @@ public class Tp1 {
 		while (true) { 
 			System.out.print("Age : ");
 			age = scanner.nextLine().trim();
-			int parsed_age;
 			try {
 				parsed_age = Integer.parseInt(age);
 			} catch (NumberFormatException e) {
@@ -107,7 +107,11 @@ public class Tp1 {
 			
 		}
 
-        System.out.printf("%n ➡️  Bonjour %s %s (%s ans)%n", first_name, last_name, age);
+		if(parsed_age > 100){
+			System.out.printf("%n ➡️  Bonjour %s %s (%s ans, félicitation, vous êtes vieux 👴)%n", first_name, last_name, age);
+		}else{
+			System.out.printf("%n ➡️  Bonjour %s %s (%s ans)%n", first_name, last_name, age);
+		}
 
 		
     }
