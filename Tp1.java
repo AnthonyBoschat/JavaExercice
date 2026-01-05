@@ -59,6 +59,11 @@ public class Tp1 {
     private static void runAllExercises() {
         exercice1_1();
         exercice1_2();
+        exercice2_1();
+		exercice2_2();
+		exercice3_1();
+		exercice4_1();
+		exercice4_2();
     }
 
     private static void presentationExercice(String exerciceNumber) {
@@ -87,15 +92,19 @@ public class Tp1 {
 		while (true) { 
 			System.out.print("Age : ");
 			age = scanner.nextLine();
+			int parsedAge;
 			try {
-				int parsedAge = Integer.parseInt(age);
-				if (parsedAge > 0) {
-					break;
-				}
-				System.out.println("L'age doit être supérieur à 0.");
-			} catch (Exception e) {
+				parsedAge = Integer.parseInt(age);
+			} catch (NumberFormatException e) {
 				System.out.println("Veuillez saisir un nombre entier.");
+				continue;
 			}
+
+			if (parsedAge > 0) {
+				break;
+			}
+
+			System.out.println("L'age doit être supérieur à 0.");
 			
 		}
 
@@ -139,7 +148,6 @@ public class Tp1 {
 		}else if(second_sentence.length() > first_sentence.length()){
 			System.out.printf("➡️  '%s' est le mot avec le plus de caractères", second_sentence);
 		}else{
-
 			System.out.printf("➡️  '%s' et '%s' possèdent le même nombre de caractère -> %s caractère(s)", first_sentence, second_sentence, first_sentence.length());
 		}
         
@@ -153,18 +161,23 @@ public class Tp1 {
 		while(true){
 			System.out.print("Saisir une année : ");
 			user_year = scanner.nextLine();
+			int parsed_user_year;
 			try {
-				int parsed_user_year = Integer.parseInt(user_year);
-
-				if(parsed_user_year % 400 == 0 || (parsed_user_year % 4 == 0 && parsed_user_year % 100 != 0)){
-					System.out.printf("➡️  L'année %s est bissextile", user_year);
-				}else{
-					System.out.printf("➡️  L'année %s n'est pas bissextile", user_year);
-				}
-				break;
-			} catch (Exception e) {
+				parsed_user_year = Integer.parseInt(user_year);
+			} catch (NumberFormatException e) {
 				System.out.println("Veuillez saisir un année valide (nombre entier)");
+				continue;
 			}
+
+			if(
+				parsed_user_year % 400 == 0 || 
+				(parsed_user_year % 4 == 0 && parsed_user_year % 100 != 0)
+			){
+				System.out.printf("➡️  L'année %s est bissextile", user_year);
+			}else{
+				System.out.printf("➡️  L'année %s n'est pas bissextile", user_year);
+			}
+			break;
 		}
     }
 
@@ -203,55 +216,93 @@ public class Tp1 {
     }
 
 
+
+
+
+
     private static void exercice4_1() {
         presentationExercice("4_1");
 
+		 
+		String user_guess;
+		double value_decimal = Math.random() * 101;
+		int rand 			 = (int) value_decimal;
+		int guess_number 	 = 0;
+		System.out.printf("(Aide -> Réponse -> %s)%n", rand);
+
 		while(true){
-			String user_guess;
-			double value_decimal = Math.random() * 101;
-			int rand 			 = (int) value_decimal;
-			int guess_number 	 = 0;
+			System.out.println("Entrer un nombre : ");
+			user_guess = scanner.nextLine();
+			int parsed_user_guess;
+			int difference;
 
-			while(true){
-				System.out.println("Entrer un nombre : ");
-				user_guess = scanner.next();
-
-				try {
-					int difference;
-					int parsed_user_guess 	= Integer.parseInt(user_guess);
-					guess_number += 1;
-					difference = rand - parsed_user_guess;
-
-					if(parsed_user_guess > rand){
-						difference = parsed_user_guess - rand;
-					}
-					
-					if(difference == 0){
-						System.out.printf("➡️  Victoire ! - %s tentative(s)", guess_number);
-						break;
-					}
-					else if(difference > 20){
-						System.out.println("-----> froid");
-					}else if(difference >= 6 && difference <= 20 ){
-						System.out.println("-----> tiède");
-					}else if(difference >= 1 && difference <= 5){
-						System.out.println("-----> chaud");
-					}
-				} catch (Exception e) {
-					System.out.println("Veuillez saisir un nombre valide (nombre entier)");
-				}
-
+			try {
+				parsed_user_guess = Integer.parseInt(user_guess);
+				guess_number += 1;
+			} catch (NumberFormatException e) {
+				System.out.println("Veuillez saisir un nombre valide (nombre entier)");
+				continue;
 			}
 
-			break;
+			difference = parsed_user_guess > rand ? parsed_user_guess - rand : rand - parsed_user_guess;
+			
+			if(difference == 0){
+				System.out.printf("%n➡️  Victoire ! - %s tentative(s)", guess_number);
+				break;
+			}
+			else if(difference > 20){
+				System.out.println("-----> froid");
+			}else if(difference >= 6 && difference <= 20 ){
+				System.out.println("-----> tiède");
+			}else if(difference >= 1 && difference <= 5){
+				System.out.println("-----> chaud");
+			}
+
 		}
+
+		
     }
 
 
     private static void exercice4_2() {
         presentationExercice("4_2");
 
-        System.out.printf("➡️ ");
+		String user_guess;
+		double value_decimal = Math.random() * 101;
+		int rand 			 = (int) value_decimal;
+		int guess_number 	 = 0;
+		System.out.printf("(Aide -> Réponse -> %s)%n", rand);
+
+		do { 
+
+			System.out.println("Entrer un nombre : ");
+			user_guess = scanner.nextLine();
+			int parsed_user_guess;
+			int difference;
+
+			try {
+				parsed_user_guess = Integer.parseInt(user_guess);
+				guess_number += 1;
+			} catch (NumberFormatException e) {
+				System.out.println("Veuillez saisir un nombre valide (nombre entier)");
+				continue;
+			}
+
+			difference = parsed_user_guess > rand ? parsed_user_guess - rand : rand - parsed_user_guess;
+			
+			if(difference == 0){
+				System.out.printf("➡️  Victoire ! - %s tentative(s)", guess_number);
+				break;
+			}
+			else if(difference > 20){
+				System.out.println("-----> froid");
+			}else if(difference >= 6 && difference <= 20 ){
+				System.out.println("-----> tiède");
+			}else if(difference >= 1 && difference <= 5){
+				System.out.println("-----> chaud");
+			}
+
+		} while (true);
     }
 
 
