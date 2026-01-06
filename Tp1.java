@@ -196,9 +196,9 @@ public class Tp1 {
 
 		for (int i = 0; i < 10; i++) {
 
-			double value_decimal = Math.random() * 101;
-			int rand 			 = (int) value_decimal;
-			int number_position  = i + 1;
+			double 	value_decimal 	= Math.random() * 101;
+			int 	rand 			= (int) value_decimal;
+			int 	number_position = i + 1;
 
 			System.out.printf("➡️  Le nombre %s vaut %s %n", number_position, rand);
 			if(rand > max_value){
