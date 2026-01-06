@@ -225,13 +225,17 @@ public class Tp2 {
                 countArray[number] += 1;
             }
         }
-        System.out.printf("%n%n📋 Tableau de comptage %n");
+
+
         // Affichage seulement
+        System.out.printf("%n%n📋 Tableau de comptage %n");
         for(int i = 0; i<countArray.length; i++){
             System.err.print(i + " ");
         }
         System.err.printf("%n-------------------%n");
         printTab(countArray);
+
+        
 
         // Le tableau trié est de même longueur que le tableau initial
         int[] sortedArray;
