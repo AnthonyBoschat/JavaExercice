@@ -36,7 +36,8 @@ public class Tp2 {
                 case "a", "A" -> runAllExercises();
                 case "1" -> exercice1();
                 case "2" -> exercice2();
-                case "3" -> exercice1();
+                case "3" -> exercice3();
+                case "4" -> exercice4();
                 case "0" -> {
                     System.out.println("Fin du programme.");
                     return;
@@ -46,6 +47,13 @@ public class Tp2 {
 
             waitForEnter();
         }
+    }
+
+    private static void runAllExercises() {
+        exercice1();
+        exercice2();
+        exercice3();
+        exercice4();
     }
 
     private static void printMenu() {
@@ -65,11 +73,7 @@ public class Tp2 {
         scanner.nextLine();
     }
 
-    private static void runAllExercises() {
-        exercice1();
-        exercice2();
-        exercice3();
-    }
+    
 
     private static void presentationExercice(String exerciceNumber) {
 		System.out.printf("%n%n%n%n");
@@ -235,7 +239,7 @@ public class Tp2 {
         System.err.printf("%n-------------------%n");
         printTab(countArray);
 
-        
+
 
         // Le tableau trié est de même longueur que le tableau initial
         int[] sortedArray;
@@ -262,7 +266,29 @@ public class Tp2 {
 
 	private static void exercice3() {
 		// printTab();
+        int[] initialArray = {5, 1, 4, 2, 8, 8, 7, 50, 25, -5};
+
+        for(int iteration = 0; iteration < initialArray.length; iteration++){
+            
+            for(int index = 0; index < initialArray.length - iteration; index++){
+                int number = initialArray[index];
+                boolean isLastNumberOfArray = index + 1 == initialArray.length;
+                if(!isLastNumberOfArray){
+                    int nextNumber = initialArray[index + 1];
+                    if(number > nextNumber){
+                        initialArray[index] = nextNumber;
+                        initialArray[index + 1] = number;
+                    }
+                }
+            }
+        }
+
+        printTab(initialArray);
 	}
 
-	
+
+
+	private static void exercice4() {
+		
+	}
 }
