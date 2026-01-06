@@ -203,9 +203,57 @@ public class Tp2 {
 	}
 
 	private static void exercice2() {
+        int[] initialArray = {9, 4, 6, 4, 7, 2, 7};
+        System.out.printf("%n%n📋 Tableau initial %n");
+        printTab(initialArray);
 
+        // On récupère le max de initialArray pour construire avec une taille fixe le countArray
+        int maxInitialArray = Integer.MIN_VALUE;
+        for(int index = 0; index < initialArray.length; index++){
+            if(initialArray[index] > maxInitialArray){
+                maxInitialArray = initialArray[index];
+            }
+        }
+
+        // Compte les occurences
+        int[] countArray;
+        countArray = new int[maxInitialArray + 1];
+
+        for(int index = 0; index < initialArray.length; index++){
+            int number = initialArray[index];
+            if(number != 0){
+                countArray[number] += 1;
+            }
+        }
+        System.out.printf("%n%n📋 Tableau de comptage %n");
+        // Affichage seulement
+        for(int i = 0; i<countArray.length; i++){
+            System.err.print(i + " ");
+        }
+        System.err.printf("%n-------------------%n");
+        printTab(countArray);
+
+        // Le tableau trié est de même longueur que le tableau initial
+        int[] sortedArray;
+        sortedArray = new int[initialArray.length];
+
+        // L'index qu'on traite du tableau trier
+        int sortedArrayIndex = 0;
         
-		// printTab();
+        // Si le countNumber n'est pas 0 (Qu'il existe des occurences de ce nombre)
+        // Pour le nombre de ces occurences -> On affecte sortedArray[index] -> Le nombre concerné -> Autant de fois que d'occurence
+        for(int index = 0; index < countArray.length; index++){
+            int countNumber = countArray[index];
+            if(countNumber != 0){
+                for(int countOccurence = 0; countOccurence < countNumber; countOccurence++){
+                    sortedArray[sortedArrayIndex] = index;
+                    sortedArrayIndex += 1;
+                }
+            }
+        }
+
+        System.out.printf("%n%n📋 Tableau trier %n");
+		printTab(sortedArray);
 	}
 
 	private static void exercice3() {
