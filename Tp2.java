@@ -63,6 +63,7 @@ public class Tp2 {
         System.out.println("1 - Lancer exercice 1");
         System.out.println("2 - Lancer exercice 2");
         System.out.println("3 - Lancer exercice 3");
+        System.out.println("4 - Lancer exercice 4");
         System.out.println("0 - Quitter");
         System.out.printf("%n");
         System.out.print("Votre choix : ");
@@ -172,21 +173,21 @@ public class Tp2 {
         // ➡️ Viable en condition réel
         ////////////////////////////////////////////////////////////////////////////////////////// 
 
-        // int[] fibonacci_array;
-        // fibonacci_array = new int[parsed_user_input + 1];
+        int[] fibonacci_array;
+        fibonacci_array = new int[parsed_user_input + 1];
 
-        // for(int index = 0; index < fibonacci_array.length; index++){
-        //     int number;
-        //     if(index == 0 || index == 1){
-        //         number = index;
-        //     }else{
-        //         number = fibonacci_array[index - 1] + fibonacci_array[index - 2];
-        //     }
-        //     fibonacci_array[index] = number;
-        // }
+        for(int index = 0; index < fibonacci_array.length; index++){
+            int number;
+            if(index == 0 || index == 1){
+                number = index;
+            }else{
+                number = fibonacci_array[index - 1] + fibonacci_array[index - 2];
+            }
+            fibonacci_array[index] = number;
+        }
 
-        // fibonacci_number = fibonacci_array[parsed_user_input];
-        // System.out.printf("Fibo à F%s = %s", user_input, fibonacci_number);
+        fibonacci_number = fibonacci_array[parsed_user_input];
+        System.out.printf("Fibo à F%s = %s", user_input, fibonacci_number);
 
 
 
@@ -286,9 +287,44 @@ public class Tp2 {
         printTab(initialArray);
 	}
 
+    private static int[] quickSort(int[] array) {
+        quickSortRecursive(array, 0, array.length - 1);
+        return array;
+    }
 
+    private static void quickSortRecursive(int[] array, int startIndex, int endIndex) {
+        if (startIndex < endIndex) {
+            int pivotIndex = separation(array, startIndex, endIndex);
+            quickSortRecursive(array, startIndex, pivotIndex - 1);
+            quickSortRecursive(array, pivotIndex + 1, endIndex);
+        }
+    }
+
+    private static int separation(int[] array, int startIndex, int pivotIndex) {
+        int pivotValue = array[pivotIndex];
+        int nextSwapPosition = startIndex;
+
+        for (int compareIndex = startIndex; compareIndex < pivotIndex; compareIndex++) {
+            if (array[compareIndex] < pivotValue) {
+                swap(array, nextSwapPosition, compareIndex);
+                nextSwapPosition++;
+            }
+        }
+        swap(array, nextSwapPosition, pivotIndex);
+        return nextSwapPosition;
+    }
+
+    private static void swap(int[] array, int nextSwapPosition, int pivotIndex) {
+        int temp = array[nextSwapPosition];
+        array[nextSwapPosition] = array[pivotIndex];
+        array[pivotIndex] = temp;
+    }
 
 	private static void exercice4() {
-		
+		int[] initialArray = {6, 3, 7, 9, 1, 5, 4, 5, 4, 15, 48, 65, 21 ,5 ,7 ,6 ,48 ,61 ,32 ,185 ,561 ,84 ,6512 ,84 ,12 ,65 ,12 ,5 ,1 ,3 ,4 ,8 ,1 ,3 ,4 ,65 ,4};
+
+
+        int[] sortedArray = quickSort(initialArray);
+        printTab(sortedArray);
 	}
 }
