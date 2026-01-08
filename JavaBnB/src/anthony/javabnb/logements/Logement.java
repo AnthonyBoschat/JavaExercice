@@ -1,17 +1,17 @@
 package anthony.javabnb.logements;
-import anthony.javabnb.utilisateurs.Personne;
+import anthony.javabnb.utilisateurs.Hote;
 
 
 public class Logement {
 
-    private final Personne  hote;
+    private final Hote      hote;
     private final int       tarifParNuit;
     private final String    adresse;
     private final int       superficie;
     private final int       nbVoyageursMax;
 
 
-    public Logement(Personne hote, int tarifParNuit, String adresse, int superficie, int nbVoyageursMax){
+    public Logement(Hote hote, int tarifParNuit, String adresse, int superficie, int nbVoyageursMax){
         this.hote = hote;
         this.tarifParNuit = tarifParNuit;
         this.adresse = adresse;
