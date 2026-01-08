@@ -1,0 +1,17 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": ["lib/**/*.jar"],
+  "java.autobuild.enabled": true,
+  "java.configuration.updateBuildConfiguration": "automatic",
+
+  "files.exclude": {
+    "**/bin": true
+  },
+  "search.exclude": {
+    "**/bin": true
+  },
+  "files.watcherExclude": {
+    "**/bin/**": true
+  }
+}

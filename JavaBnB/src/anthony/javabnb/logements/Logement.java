@@ -1,0 +1,34 @@
+package anthony.javabnb.logements;
+import anthony.javabnb.utilisateurs.Personne;
+
+
+public class Logement {
+
+    private final Personne  hote;
+    private final int       tarifParNuit;
+    private final String    adresse;
+    private final int       superficie;
+    private final int       nbVoyageursMax;
+
+
+    public Logement(Personne hote, int tarifParNuit, String adresse, int superficie, int nbVoyageursMax){
+        this.hote = hote;
+        this.tarifParNuit = tarifParNuit;
+        this.adresse = adresse;
+        this.superficie = superficie;
+        this.nbVoyageursMax = nbVoyageursMax;
+    }
+
+    public int getTarifParNuit(){
+        return this.tarifParNuit;
+    }
+
+    public void  afficher(){
+        System.out.print("🙍 Hôte du logement : ");
+        hote.afficher();
+        System.out.printf("🗺️  Adresse : %s %n", adresse);
+        System.out.printf("📏 Superficie : %sm² %n", superficie);
+        System.out.printf("💵 Tarif par nuit : %s€ %n", tarifParNuit);
+        System.out.printf("🔒 Nombre de voyageur maximum : %s %n", nbVoyageursMax);
+    }
+}
