@@ -15,7 +15,8 @@ public class Appartement extends Logement {
 
     @Override
     public void afficher(){
-        super.afficher("Appartement");
+        System.out.printf("🔑 Type de logement : Appartement %n");
+        super.afficher();
         String balconSentence = this.superficieBalcon > 0 ? "Oui (" + this.superficieBalcon + "m²)" : "Non";
         System.out.printf("🏊  Balcon : %s %n", balconSentence);
 

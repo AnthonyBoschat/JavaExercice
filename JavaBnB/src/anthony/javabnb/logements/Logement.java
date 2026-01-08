@@ -30,9 +30,4 @@ public class Logement {
         System.out.printf("💵 Tarif par nuit : %s€ %n", tarifParNuit);
         System.out.printf("🔒 Nombre de voyageur maximum : %s %n", nbVoyageursMax);
     }
-
-    public void afficher(String typeLogement){
-        System.out.printf("🔑 Type de logement : %s %n", typeLogement);
-        this.afficher();
-    }
 }

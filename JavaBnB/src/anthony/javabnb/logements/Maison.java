@@ -15,7 +15,8 @@ public class Maison extends Logement {
 
     @Override
     public void afficher(){
-        super.afficher("Maison");
+        System.out.printf("🔑 Type de logement : Maison %n");
+        super.afficher();
         String piscineSentence          = this.possedePiscine ? "Oui" : "Non";
         String jardinSentence           = this.superficieJardin > 0 ? "Oui (" + this.superficieJardin + "m²)" : "Non";
         System.out.printf("🌲  Jardin : %s %n", jardinSentence);

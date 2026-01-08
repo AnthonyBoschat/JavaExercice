@@ -25,7 +25,7 @@ public class Sejour {
         int finalPrice   = nbNuits * tarifParNuit;
 
         logement.afficher();
-        System.out.printf("------%n");
+        System.out.printf("--%n");
         System.out.printf("📅 Date d'arrivée : %s %n", formatedDate);
         System.out.printf("🌙  Nombre de nuit : %s %n", nbNuits);
         System.out.printf("🙍  Nombre de voyageur(s) : %s %n", nbVoyageurs);
