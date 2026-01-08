@@ -28,8 +28,8 @@ public class Main {
         mathiasCharpentier.afficher();
 
         section("🏠 LOGEMENT");
-        Maison maisonJeff = new Maison(jeffBezos, 10_000, "1 rue de la Richesse", 5400, 20, 10_000, true );
-        Appartement appartementAnthony = new Appartement(anthonyBoschat, 35, "69 rue Mirabeau, 37000 Tours", 80, 2, 5, 3);
+        Maison maisonJeff               = new Maison(jeffBezos, 10_000, "1 rue de la Richesse", 5400, 20, 10_000, true );
+        Appartement appartementAnthony  = new Appartement(anthonyBoschat, 35, "69 rue Mirabeau, 37000 Tours", 80, 2, 5, 3);
         maisonJeff.afficher();
         dividerLarge();
         appartementAnthony.afficher();

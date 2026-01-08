@@ -9,15 +9,17 @@ public class Appartement extends Logement {
     
     public Appartement(Hote hote, int tarifParNuit, String adresse, int superficie, int nbVoyageursMax, int superficieBalcon, int numeroEtage){
         super(hote, tarifParNuit, adresse, superficie, nbVoyageursMax);
-        this.superficieBalcon = superficieBalcon;
-        this.numeroEtage = numeroEtage;
+        this.superficieBalcon   = superficieBalcon;
+        this.numeroEtage        = numeroEtage;
     }
 
     @Override
     public void afficher(){
+        String balconSentence = this.superficieBalcon > 0 ? "Oui (" + this.superficieBalcon + "m²)" : "Non";
+
         System.out.printf("🔑 Type de logement : Appartement %n");
         super.afficher();
-        String balconSentence = this.superficieBalcon > 0 ? "Oui (" + this.superficieBalcon + "m²)" : "Non";
+        System.out.printf("🛎️  Étage : %s %n", this.numeroEtage);
         System.out.printf("🏊  Balcon : %s %n", balconSentence);
 
     }

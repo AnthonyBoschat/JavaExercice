@@ -11,10 +11,10 @@ public class Logement {
 
 
     public Logement(Hote hote, int tarifParNuit, String adresse, int superficie, int nbVoyageursMax){
-        this.hote = hote;
-        this.tarifParNuit = tarifParNuit;
-        this.adresse = adresse;
-        this.superficie = superficie;
+        this.hote           = hote;
+        this.tarifParNuit   = tarifParNuit;
+        this.adresse        = adresse;
+        this.superficie     = superficie;
         this.nbVoyageursMax = nbVoyageursMax;
     }
 
@@ -25,9 +25,9 @@ public class Logement {
     public void afficher(){
         System.out.print("🙍 Hôte du logement : ");
         hote.afficher();
-        System.out.printf("🗺️  Adresse : %s %n", adresse);
-        System.out.printf("📏 Superficie : %sm² %n", superficie);
-        System.out.printf("💵 Tarif par nuit : %s€ %n", tarifParNuit);
-        System.out.printf("🔒 Nombre de voyageur maximum : %s %n", nbVoyageursMax);
+        System.out.printf("🗺️  Adresse : %s %n", this.adresse);
+        System.out.printf("📏 Superficie : %sm² %n", this.superficie);
+        System.out.printf("💵 Tarif par nuit : %s€ %n", this.tarifParNuit);
+        System.out.printf("🔒 Nombre de voyageur maximum : %s %n", this.nbVoyageursMax);
     }
 }
