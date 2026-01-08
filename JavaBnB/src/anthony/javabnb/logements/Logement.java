@@ -1,7 +1,6 @@
 package anthony.javabnb.logements;
 import anthony.javabnb.utilisateurs.Hote;
 
-
 public class Logement {
 
     private final Hote      hote;
@@ -23,12 +22,17 @@ public class Logement {
         return this.tarifParNuit;
     }
 
-    public void  afficher(){
+    public void afficher(){
         System.out.print("🙍 Hôte du logement : ");
         hote.afficher();
         System.out.printf("🗺️  Adresse : %s %n", adresse);
         System.out.printf("📏 Superficie : %sm² %n", superficie);
         System.out.printf("💵 Tarif par nuit : %s€ %n", tarifParNuit);
         System.out.printf("🔒 Nombre de voyageur maximum : %s %n", nbVoyageursMax);
+    }
+
+    public void afficher(String typeLogement){
+        System.out.printf("🔑 Type de logement : %s %n", typeLogement);
+        this.afficher();
     }
 }
