@@ -18,8 +18,14 @@ public class Maison extends Logement {
         String piscineSentence  = this.possedePiscine ? "Oui" : "Non";
         String jardinSentence   = this.superficieJardin > 0 ? "Oui (" + this.superficieJardin + "m²)" : "Non";
         
+        System.out.printf("%n-- (detail du logement)%n");
         System.out.printf("🔑 Type de logement : Maison %n");
-        super.afficher();
+        System.out.print("🙍 Hôte du logement : ");
+        super.hote.afficher();
+        System.out.printf("🗺️  Adresse : %s %n", super.adresse);
+        System.out.printf("📏 Superficie : %sm² %n", super.superficie);
+        System.out.printf("💵 Tarif par nuit : %s€ %n", super.tarifParNuit);
+        System.out.printf("🔒 Nombre de voyageur maximum : %s %n", super.nbVoyageursMax);
         System.out.printf("🌲  Jardin : %s %n", jardinSentence);
         System.out.printf("🏊  Piscine : %s %n", piscineSentence);
         

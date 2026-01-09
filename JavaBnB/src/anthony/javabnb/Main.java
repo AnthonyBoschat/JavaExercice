@@ -2,6 +2,7 @@ package anthony.javabnb;
 import anthony.javabnb.logements.Appartement;
 import anthony.javabnb.logements.Maison;
 import anthony.javabnb.outils.Utile;
+import anthony.javabnb.reservations.Reservation;
 import anthony.javabnb.reservations.Sejour;
 import anthony.javabnb.utilisateurs.Hote;
 import anthony.javabnb.utilisateurs.Voyageur;
@@ -37,11 +38,29 @@ public class Main {
 
         section("📅 SEJOUR");
         Date reservationDate                = Utile.createDate(25, 1, 2026);
-        Sejour sejourLogementAnthonyBoschat = new Sejour(appartementAnthony, reservationDate, 2, 1);
+        Sejour sejourLogementAnthonyBoschat = new Sejour(appartementAnthony, reservationDate, 2, 3);
         Sejour sejourLogementJeffBezos      = new Sejour(maisonJeff, reservationDate, 7, 1);
         sejourLogementAnthonyBoschat.afficher();
-        dividerLarge();
+        dividerLarge(); 
         sejourLogementJeffBezos.afficher();
+
+
+        section("🔒 RESERVATION");
+        try {
+            Reservation reservationValide   = new Reservation(sejourLogementJeffBezos, mathiasCharpentier);
+            reservationValide.afficher();
+        } catch (ExceptionInInitializerError error) {
+            System.out.printf("%n ❌  La réservation ne rempli pas les critères de réservation %n (%s) %n %n", error.getMessage());
+        }
+
+        dividerLarge(); 
+
+        try {
+            Reservation reservationInvalide = new Reservation(sejourLogementAnthonyBoschat, mathiasCharpentier);
+            reservationInvalide.afficher();
+        } catch (ExceptionInInitializerError error) {
+            System.out.printf("%n ❌  La réservation ne rempli pas les critères de réservation %n (%s) %n %n", error.getMessage());
+        }
 
     }
 

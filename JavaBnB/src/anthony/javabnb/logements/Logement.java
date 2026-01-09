@@ -1,13 +1,13 @@
 package anthony.javabnb.logements;
 import anthony.javabnb.utilisateurs.Hote;
 
-public class Logement {
+public abstract class Logement {
 
-    private final Hote      hote;
-    private final int       tarifParNuit;
-    private final String    adresse;
-    private final int       superficie;
-    private final int       nbVoyageursMax;
+    protected final Hote      hote;
+    protected final int       tarifParNuit;
+    protected final String    adresse;
+    protected final int       superficie;
+    protected final int       nbVoyageursMax;
 
 
     public Logement(Hote hote, int tarifParNuit, String adresse, int superficie, int nbVoyageursMax){
@@ -22,12 +22,9 @@ public class Logement {
         return this.tarifParNuit;
     }
 
-    public void afficher(){
-        System.out.print("🙍 Hôte du logement : ");
-        hote.afficher();
-        System.out.printf("🗺️  Adresse : %s %n", this.adresse);
-        System.out.printf("📏 Superficie : %sm² %n", this.superficie);
-        System.out.printf("💵 Tarif par nuit : %s€ %n", this.tarifParNuit);
-        System.out.printf("🔒 Nombre de voyageur maximum : %s %n", this.nbVoyageursMax);
+    public int getNbVoyageurMax(){
+        return this.nbVoyageursMax;
     }
+
+    abstract public void afficher();
 }

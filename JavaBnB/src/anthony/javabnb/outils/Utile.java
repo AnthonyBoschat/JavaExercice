@@ -17,4 +17,8 @@ public class Utile {
     public static String formaterDate(Date date){
         return new SimpleDateFormat("dd/MM/yyyy").format(date);
     }
+
+    public static String formaterDate(Date date, String format){
+        return new SimpleDateFormat(format).format(date);
+    }
 }
