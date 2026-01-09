@@ -4,6 +4,8 @@ import anthony.javabnb.logements.Maison;
 import anthony.javabnb.outils.Utile;
 import anthony.javabnb.reservations.Reservation;
 import anthony.javabnb.reservations.Sejour;
+import anthony.javabnb.reservations.SejourCourt;
+import anthony.javabnb.reservations.SejourLong;
 import anthony.javabnb.utilisateurs.Hote;
 import anthony.javabnb.utilisateurs.Voyageur;
 import java.util.Date;
@@ -38,8 +40,8 @@ public class Main {
 
         section("📅 SEJOUR");
         Date reservationDate                = Utile.createDate(25, 1, 2026);
-        Sejour sejourLogementAnthonyBoschat = new Sejour(appartementAnthony, reservationDate, 2, 3);
-        Sejour sejourLogementJeffBezos      = new Sejour(maisonJeff, reservationDate, 7, 1);
+        Sejour sejourLogementAnthonyBoschat = new SejourCourt(appartementAnthony, reservationDate, 2, 3);
+        Sejour sejourLogementJeffBezos      = new SejourLong(maisonJeff, reservationDate, 7, 1);
         sejourLogementAnthonyBoschat.afficher();
         dividerLarge(); 
         sejourLogementJeffBezos.afficher();

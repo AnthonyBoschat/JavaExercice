@@ -5,4 +5,5 @@ public interface Reservable {
     boolean     aUnNombreDeNuitsCorrect();
     boolean     aUnNombreDeVoyageursCorrect();
     void        afficher();
+
 }
