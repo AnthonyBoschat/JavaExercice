@@ -6,7 +6,7 @@ import java.util.Date;
 public abstract class Sejour implements Reservable{
 
     protected final Logement    logement;
-    private final   Date        dateArrivee;
+    private   final Date        dateArrivee;
     protected final int         nbNuits;
     protected final int         nbVoyageurs;
     protected       int         prix;
@@ -36,14 +36,12 @@ public abstract class Sejour implements Reservable{
         System.out.printf("📅 Date d'arrivée : %s %n", formatedDate);
         System.out.printf("🌙  Nombre de nuit : %s %n", this.nbNuits);
         System.out.printf("🙍  Nombre de voyageur(s) : %s %n", this.nbVoyageurs);
-        
     }
     
     @Override
     public boolean aUneDateArriveeCorrecte() {
         return this.dateArrivee.after(new Date());
     }
-    
     
     @Override
     public boolean aUnNombreDeVoyageursCorrect() {

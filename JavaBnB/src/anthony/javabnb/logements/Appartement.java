@@ -26,7 +26,7 @@ public class Appartement extends Logement {
         System.out.printf("💵 Tarif par nuit : %s€ %n", super.tarifParNuit);
         System.out.printf("🔒 Nombre de voyageur maximum : %s %n", super.nbVoyageursMax);
         System.out.printf("🛎️  Étage : %s %n", this.numeroEtage);
-        System.out.printf("🏊  Balcon : %s %n", balconSentence);
+        System.out.printf("🏞️  Balcon : %s %n", balconSentence);
 
     }
 }

@@ -40,7 +40,7 @@ public class Main {
 
         section("📅 SEJOUR");
         Date reservationDate                = Utile.createDate(25, 1, 2026);
-        Sejour sejourLogementAnthonyBoschat = new SejourCourt(appartementAnthony, reservationDate, 2, 3);
+        Sejour sejourLogementAnthonyBoschat = new SejourCourt(appartementAnthony, reservationDate, 2, 2);
         Sejour sejourLogementJeffBezos      = new SejourLong(maisonJeff, reservationDate, 7, 1);
         sejourLogementAnthonyBoschat.afficher();
         dividerLarge(); 

@@ -21,7 +21,7 @@ public class SejourLong extends Sejour{
     @Override
     public void afficher(){
         super.afficher();
-        System.out.printf("🗺️  Prix du séjour : %s€  (%s de promotion) - ( %s nuit(s) * %s€ )%n", this.prix, this.promotion, this.nbNuits, this.logement.getTarifParNuit());
+        System.out.printf("💰  Prix du séjour : %s€  (%s de promotion) - ( %s nuit(s) * %s€ )%n", this.prix, this.promotion, this.nbNuits, this.logement.getTarifParNuit());
     }
 
     @Override
