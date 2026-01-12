@@ -9,7 +9,7 @@ public class SejourLong extends Sejour{
     private final static    int PROMOTION_EN_POURCENTAGE = 20;
     private final           int promotion;
 
-    public SejourLong(Logement logement, Date dateArrivee, int nbNuits, int nbVoyageurs){
+    SejourLong(Logement logement, Date dateArrivee, int nbNuits, int nbVoyageurs){
         super(logement, dateArrivee, nbNuits, nbVoyageurs);
         this.promotion  = this.calculerPromotion();
     }

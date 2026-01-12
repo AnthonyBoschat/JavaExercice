@@ -26,8 +26,8 @@ public class Maison extends Logement {
         System.out.printf("📏 Superficie : %sm² %n", super.superficie);
         System.out.printf("💵 Tarif par nuit : %s€ %n", super.tarifParNuit);
         System.out.printf("🔒 Nombre de voyageur maximum : %s %n", super.nbVoyageursMax);
-        System.out.printf("🌲  Jardin : %s %n", jardinSentence);
-        System.out.printf("🏊  Piscine : %s %n", piscineSentence);
+        System.out.printf("🌲 Jardin : %s %n", jardinSentence);
+        System.out.printf("🏊 Piscine : %s %n", piscineSentence);
         
     }
 }
